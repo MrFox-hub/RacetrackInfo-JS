@@ -1,0 +1,116 @@
+/* Global Layout */
+.mainpage-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #111827;
+  color: #f3f4f6;
+  font-family: "Roboto Mono", monospace;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+/* Title */
+.mainpage-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  margin-bottom: 3rem;
+  letter-spacing: -0.025em;
+  max-width: 90%;
+}
+
+/* Section */
+.mainpage-section {
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Section Titles */
+.mainpage-section-title {
+  font-size: clamp(1.3rem, 3.5vw, 2rem);
+  font-weight: 600;
+  color: #d1d5db;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Divider */
+.mainpage-divider {
+  width: 100%;
+  max-width: 900px;
+  height: 1px;
+  background-color: #374151;
+  margin: 2rem 0;
+}
+
+/* Buttons Wrapper */
+.mainpage-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Button Style */
+.mainpage-button {
+  flex: 1 1 220px;
+  max-width: 300px;
+  border: 1px solid #4b5563;
+  background-color: #1f2937;
+  color: #f3f4f6;
+  padding: 1rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-radius: 0.375rem;
+  min-width: 140px;
+}
+
+.mainpage-button:hover {
+  background-color: #374151;
+}
+
+/* RESPONSIVE FIXES */
+@media (width <= 1024px) {
+  .mainpage-button {
+    flex: 1 1 45%;
+    padding: 0.8rem;
+  }
+}
+
+@media (width <= 768px) {
+  .mainpage-title {
+    margin-bottom: 2rem;
+  }
+
+  .mainpage-buttons {
+    gap: 0.8rem;
+  }
+
+  .mainpage-button {
+    flex: 1 1 48%;
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    padding: 0.7rem;
+  }
+}
+
+@media (width <= 480px) {
+  .mainpage-button {
+    flex: 1 1 100%;
+    font-size: clamp(0.8rem, 4vw, 0.95rem);
+    padding: 0.6rem;
+  }
+
+  .mainpage-section-title {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+  }
+}

@@ -1,0 +1,201 @@
+/* General Page Styling */
+body {
+  font-family: "Roboto Mono", monospace;
+  text-align: center;
+  background-color: #111827; /* bg-gray-900 */
+  color: #f3f4f6; /* text-gray-100 */
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Variables */
+:root {
+  --background-color: #111827; /* bg-gray-900 */
+  --card-bg: #1f2937; /* bg-gray-800 */
+  --border-color: #374151; /* border-gray-700 */
+  --text-color: #f3f4f6; /* text-gray-100 */
+  --accent-color: #fbbf24; /* text-amber-400 */
+  --danger-color: #ef4444; /* text-red-500 */
+}
+
+/* Back Button Styling */
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  background-color: #1f2937;
+  color: #f3f4f6;
+  border: 1px solid #374151;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 14px;
+}
+
+.back-button:hover {
+  background-color: var(--border-color);
+}
+
+/* Leaderboard Container */
+.leaderboard-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Race Title Container */
+.race-title-container {
+  padding: 5px 0;
+  background-color: #1f2937;
+}
+
+/* Race Name Specific */
+.race-name {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* Race Timer */
+.race-timer {
+  margin: 5px 0;
+  font-size: 24px;
+}
+
+/* Race Meta Info */
+.race-meta {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 0;
+  background-color: rgb(31 41 55 / 70%);
+}
+
+/* Table Container */
+.table-scroll-wrapper {
+  flex: 1;
+  max-height: calc(100vh - 120px);
+  width: 100%;
+}
+
+/* Table Styling */
+.leaderboard {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* Table Header */
+.leaderboard th {
+  background-color: #1f2937;
+  padding: 8px 4px;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* Table Body - Fixed height for 8 rows */
+.leaderboard tbody {
+  height: calc(100% - 40px);
+}
+
+/* Each row takes 1/8 of the available height */
+.leaderboard tbody tr {
+  height: 12.5%;
+}
+
+.leaderboard td {
+  padding: 0 4px;
+  text-align: center;
+  font-size: 16px;
+  border-bottom: 1px solid #374151;
+}
+
+/* Row Background Colors */
+.leaderboard tbody tr:nth-child(odd) {
+  background-color: rgb(31 41 55 / 30%);
+}
+
+.leaderboard tbody tr:nth-child(even) {
+  background-color: rgb(31 41 55 / 60%);
+}
+
+/* Column Widths */
+.leaderboard th:first-child,
+.leaderboard td:first-child {
+  width: 10%;
+}
+
+.leaderboard th:nth-child(2),
+.leaderboard td:nth-child(2) {
+  width: 15%;
+}
+
+.leaderboard th:nth-child(3),
+.leaderboard td:nth-child(3) {
+  width: 35%;
+}
+
+.leaderboard th:nth-child(4),
+.leaderboard td:nth-child(4) {
+  width: 20%;
+}
+
+.leaderboard th:nth-child(5),
+.leaderboard td:nth-child(5) {
+  width: 20%;
+}
+
+/* Best Lap Highlight */
+.leaderboard td:nth-child(4) b {
+  color: #fbbf24;
+}
+
+/* Flashing Animation */
+.flash-red {
+  animation: flash-red 0.5s infinite alternate;
+}
+
+@keyframes flash-red {
+  0% {
+    color: #ef4444;
+  }
+
+  50% {
+    color: #fbbf24;
+  }
+
+  100% {
+    color: #ef4444;
+  }
+}
+
+/* Responsive Adjustments */
+@media (width <= 768px) {
+  .race-name {
+    font-size: 2.5vw;
+  }
+
+  .race-timer {
+    font-size: 4vw;
+  }
+
+  .race-meta {
+    font-size: 1.5vw;
+  }
+
+  .leaderboard th,
+  .leaderboard td {
+    font-size: 1.8vw;
+    padding: 0.1vh 0.2vw;
+  }
+
+  .back-button {
+    font-size: 1.8vw;
+  }
+}

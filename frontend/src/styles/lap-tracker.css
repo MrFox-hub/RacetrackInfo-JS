@@ -1,0 +1,145 @@
+/* 🔧 Body Setup */
+body {
+  font-family: "Roboto Mono", monospace;
+  background-color: #111827;
+  color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* 🔧 Root container */
+.lap-line-tracker {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Timer and flag display */
+.timer-display {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(31 41 55 / 80%);
+  color: #f3f4f6;
+  padding: 5px 15px;
+  border-radius: 6px;
+  font-size: 24px;
+  z-index: 100;
+  font-weight: bold;
+  border: 1px solid #374151;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.flag-indicator {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+/* Pulsing timer when under 10s */
+@keyframes pulse {
+  0% {
+    background-color: rgb(239 68 68 / 70%);
+  }
+
+  50% {
+    background-color: rgb(239 68 68 / 90%);
+  }
+
+  100% {
+    background-color: rgb(239 68 68 / 70%);
+  }
+}
+
+.timer-pulsing {
+  animation: pulse 1s infinite;
+  color: white;
+  border-color: #ef4444;
+}
+
+/* 🚘 Button Grid */
+.lap-buttons {
+  display: grid;
+  gap: 3px;
+  height: calc(100vh - 60px);
+  width: 100vw;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* Grid layouts to fit 8 racers evenly */
+.landscape-mode .lap-buttons {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.portrait-mode .lap-buttons {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+/* Car buttons */
+.lap-action-button {
+  font-size: 2.5rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+.lap-action-button:active {
+  background-color: #1e40af;
+}
+
+.lap-action-button:disabled {
+  background-color: #4b5563;
+  color: rgb(127 127 127);
+  font-size: 3rem;
+  cursor: not-allowed;
+}
+
+/* Back button */
+.back-button {
+  position: absolute;
+  top: 1vh;
+  left: 1vw;
+  padding: 1vh 1vw;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.5vw;
+  transition: background-color 0.2s ease;
+  z-index: 10;
+}
+
+.back-button:hover {
+  background-color: var(--border-color);
+}
+
+/* Hide extras but keep back button */
+.main-menu-button,
+.mode-toggle-btn,
+.fullscreen-toggle-btn,
+.race-info-bar,
+.status-pill {
+  display: none;
+}

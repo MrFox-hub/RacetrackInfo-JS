@@ -1,0 +1,322 @@
+/* === Global Reset === */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Roboto Mono", monospace;
+}
+
+.receptionist-page-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* === Container === */
+.receptionist-container {
+  background: #111827;
+  color: #f3f4f6;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* === Header === */
+.receptionist-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.receptionist-header h1 {
+  font-size: 2rem;
+}
+
+/* === Layout Grid === */
+.receptionist-content-flex {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1rem;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+/* === Section Base === */
+.receptionist-section {
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* === Add/Edit Section === */
+.add-edit-section {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.add-edit-section .driver-list-scroll {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 50vh;
+}
+
+@media (width <= 768px) {
+  .add-edit-section .driver-list-scroll {
+    max-height: 30vh;
+  }
+}
+
+@media (width <= 480px) {
+  .add-edit-section .driver-list-scroll {
+    max-height: 35vh;
+  }
+}
+
+/* === Upcoming Sessions Section === */
+.upcoming-sessions-section {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.upcoming-sessions-section .session-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+/* === Session Item === */
+.session-item {
+  background: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.session-header {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.session-drivers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.session-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+}
+
+@media (width <= 768px) {
+  .upcoming-sessions-section {
+    max-height: 35vh;
+  }
+
+  .session-item {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .session-actions {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  .session-actions .action-button {
+    flex-grow: 1;
+    padding: 0.4rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (width <= 480px) {
+  .upcoming-sessions-section {
+    max-height: 30vh;
+  }
+
+  .session-item {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+
+  .session-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.25rem;
+  }
+
+  .session-actions .action-button {
+    padding: 0.3rem 0.4rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* === Input Groups === */
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.input-group input {
+  background: #374151;
+  color: #f3f4f6;
+  border: 1px solid #4b5563;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.char-count {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.input-group-driver-add input {
+  flex: 1;
+  min-width: 130px;
+}
+
+.input-car-number {
+  width: 100px;
+}
+
+/* === Buttons === */
+.action-button {
+  background: #1f2937;
+  color: #f3f4f6;
+  border: 1px solid #4b5563;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background: #374151;
+}
+
+.action-button.danger {
+  background: #991b1b;
+  border-color: #dc2626;
+}
+
+.action-button.danger:hover {
+  background: #dc2626;
+}
+
+.action-button:disabled {
+  background: #4b5563;
+  color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* === Driver List === */
+.driver-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.driver-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  gap: 1rem;
+}
+
+.driver-info {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 1rem;
+}
+
+.driver-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+@media (width <= 768px) {
+  .driver-list li {
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: 0.9rem;
+  }
+
+  .driver-info {
+    flex-direction: row;
+    gap: 0.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (width <= 480px) {
+  .driver-list li {
+    font-size: 0.85rem;
+    padding: 0.4rem;
+  }
+
+  .driver-info {
+    font-size: 0.8rem;
+  }
+
+  .driver-actions {
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 100%;
+  }
+
+  .action-button {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* === Driver Tag === */
+.driver-tag {
+  background: #1f2937;
+  color: #f3f4f6;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+}
+
+/* === Counter === */
+.driver-counter {
+  font-size: 0.9rem;
+  color: #b5b9c2;
+}
+
+.driver-counter.limit-reached {
+  color: #facc15;
+}

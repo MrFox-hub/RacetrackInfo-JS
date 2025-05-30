@@ -1,0 +1,16 @@
+.flag-control {
+  text-align: center;
+}
+
+.flag-control button {
+  background-color: #444;
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.flag-control button:hover {
+  background-color: #666;
+}

@@ -1,0 +1,146 @@
+/* General Reset */
+body {
+  font-family: "Roboto Mono", monospace;
+  background-color: #111827;
+  color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Container */
+.next-race-page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Back Button */
+.next-race-back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  background-color: #1f2937;
+  color: #f3f4f6;
+  border: 1px solid #374151;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 14px;
+}
+
+.next-race-back-button:hover {
+  background-color: #374151;
+}
+
+/* Header */
+.next-race-header {
+  padding: 10px 0;
+  background-color: #1f2937;
+  text-align: center;
+}
+
+.next-race-title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.next-race-message {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #fbbf24;
+}
+
+/* Table Section */
+.next-race-table-wrapper {
+  flex: 1;
+  max-height: calc(100vh - 120px);
+  width: 100%;
+  overflow-y: auto;
+}
+
+/* Table */
+.next-race-table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* Table Head */
+.next-race-table th {
+  background-color: #1f2937;
+  padding: 8px 4px;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* Table Body */
+.next-race-table tbody {
+  height: calc(100% - 40px);
+}
+
+.next-race-table tbody tr {
+  height: 12.5%;
+}
+
+.next-race-table td {
+  padding: 0 4px;
+  text-align: center;
+  font-size: 16px;
+  border-bottom: 1px solid #374151;
+}
+
+/* Row Colors */
+.next-race-table tbody tr:nth-child(odd) {
+  background-color: rgb(31 41 55 / 30%);
+}
+
+.next-race-table tbody tr:nth-child(even) {
+  background-color: rgb(31 41 55 / 60%);
+}
+
+/* Column Widths */
+.next-race-table th:first-child,
+.next-race-table td:first-child {
+  width: 30%;
+}
+
+.next-race-table th:nth-child(2),
+.next-race-table td:nth-child(2) {
+  width: 70%;
+}
+
+/* No Drivers Message */
+.next-race-no-drivers {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (width <= 768px) {
+  .next-race-title {
+    font-size: 2.5vw;
+  }
+
+  .next-race-maintenance-message,
+  .next-race-starting-message {
+    font-size: 2vw;
+  }
+
+  .next-race-table th,
+  .next-race-table td {
+    font-size: 2vw;
+    padding: 0.5vh 0.5vw;
+  }
+
+  .next-race-back-button {
+    font-size: 2vw;
+  }
+}

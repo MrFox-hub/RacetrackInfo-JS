@@ -1,0 +1,71 @@
+/* Base styling for the full-screen flag display */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.flag {
+  width: 100vw; /* full viewport width */
+  height: 100vh; /* full viewport height for digital screens */
+  transition: background-color 0.5s ease-in-out;
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Safe mode: Solid green */
+.flag.safe {
+  background-color: green;
+}
+
+/* Hazard mode: Solid yellow */
+.flag.hazard {
+  background-color: yellow;
+}
+
+/* Danger mode: Solid red */
+.flag.danger {
+  background-color: red;
+}
+
+.flag.finish {
+  background: conic-gradient(#000 0% 25%, white 25% 50%, #000 50% 75%, white 75% 100%) 150px 150px /
+    250px 250px; /* Increased size */
+
+  background-attachment: fixed;
+}
+
+/* 🧩 Mini Flag Patch for Leaderboard */
+
+.flag-mini {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  border-radius: 6px;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  margin-left: 10px;
+}
+
+/* Reuse flag colors */
+.flag-mini.safe {
+  background-color: green;
+}
+
+.flag-mini.hazard {
+  background-color: yellow;
+  color: black;
+}
+
+.flag-mini.danger {
+  background-color: red;
+}
+
+.flag-mini.finish {
+  background: conic-gradient(#000 0% 25%, white 25% 50%, #000 50% 75%, white 75% 100%);
+  background-attachment: fixed;
+}

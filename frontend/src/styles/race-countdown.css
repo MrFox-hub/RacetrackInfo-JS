@@ -1,0 +1,48 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  color: white;
+  font-family: monospace; /* monospaced so ':' is centered */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.race-countdown {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#race-timer {
+  font-size: 30vw; /* size based on width of screen */
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+}
+
+/* Optional: Flashing animation for final 10s */
+.flash-red {
+  animation: flash-red 1s infinite;
+}
+
+@keyframes flash-red {
+  0% {
+    color: red;
+  }
+
+  50% {
+    color: yellow;
+  }
+
+  100% {
+    color: red;
+  }
+}
